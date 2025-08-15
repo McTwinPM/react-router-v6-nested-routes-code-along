@@ -10,11 +10,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={Layout}>
-            <Route path="/" element={<Home />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Home />}>
+                <Route path="/profile/:id" element={<UserProfile />} />
+            </Route>
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/profile/:id" element={<UserProfile />} />
             <Route path="*" element={<ErrorPage />}/>
           </Route>
       </Routes>
